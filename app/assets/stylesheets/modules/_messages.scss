@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+// サイド部分
+
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  border-bottom: 3px #eeeeee;
+  
+  &__user--name {
+    height: 100px;
+    display: flex;
+    align-items: center;
+   
+    &--ingredients {
+      height: 20px;
+      width: calc(300px - 40px);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      &--name {
+        line-height: 20px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &--icons {
+        width: 60px;
+        text-align: right;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__group--list {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+
+    &--package {
+      margin: 0px 20px;
+      color: #ffffff;
+
+      &--groupname {
+        padding-top: 20px;
+        font-size: 15px;
+      }
+
+      &--new {
+        padding: 5px 0px 40px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+
+// 該当箇所でaタグとして書いてます
+// .icons {
+//   text-decoration: none;
+//   color: #ffffff;
+//   padding-left: 5px;
+// }
+
+
+
+// メイン部分
+
+.main-chat {
+  background-color: #ffffff;
+  width: calc(100vw - 300px);
+
+  &__group--info{
+    background-color: #ffffff;
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+
+    &--ingredients {
+      margin: 0px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &--leftbox {
+        color: #333333;
+        font-size: 20px;
+        padding-top: 35px;
+        &--member {
+          color: #999999;
+          font-size: 12px;
+          padding-top: 15px;
+        }
+      }
+
+      &--Edit {
+        color: #38aef0;
+        font-size: 16px;
+        height: 40px;
+        width: 72px;
+        border: solid 1px #38aef0;
+        padding-left: 20px;
+        line-height: 40px;
+        &--btn {
+          text-decoration: none;
+          color: #38aef0;
+        }
+      }
+    }
+  }
+
+  &__message--list {
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    padding-top: 35px;
+
+    &--article {
+      margin-left: 40px;
+      
+      &--head {
+        padding-bottom: 12px;
+        display: flex;
+
+        &--name {
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &--date {
+          color: #999999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      
+      &--text {
+        color: #434A54;
+        font-size: 14px;
+        padding-bottom: 46px;
+      }
+    }
+  }
+
+  &__message--form {
+    background-color: #d2d2d2;
+    height: 90px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+
+    &--input {
+      line-height: 50px;
+      background-color: white;
+      width: calc(100vw - 300px - 195px);
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      
+      &--text {
+        width: calc(100vw - 300px - 195px);
+        height: 50px;
+        border: none;
+      }
+      &--text::placeholder{
+        padding-left: 10px;
+      }
+
+      &--picture {
+        position: absolute;
+        right: 10px;
+        font-size: 1.3rem;
+      }
+    }
+
+    &--send-btn {
+      background-color: #38aef0;
+      width: 100px;
+      height: 50px;
+      color: #ffffff;
+      margin-left: 15px;
+    }
+  }
+}
+
+
+// BEMに直しました
+
+// .edit-btn {
+//   text-decoration: none;
+//   color: #38aef0;
+// }
+
+// .main-chat__group--info--ingredients--Edit--btn {
+//   text-decoration: none;
+//   color: #38aef0;
+// }
+
+// --btn {
+//   text-decoration: none;
+//   color: #38aef0;
+// }
+
+
+
+// いらなかった
+// .main-chat__message--form--send {
+//   text-align: center;
+//   line-height: 50px;
+// }
