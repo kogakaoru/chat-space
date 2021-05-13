@@ -4,13 +4,16 @@
       -# masa
       = current_user.name
     .side-bar__user--name--ingredients--icons
-      = link_to "#" ,class:'icons' do
+      = link_to new_group_path, class:'icons' do
         <i class="fas fa-edit icon"></i>
       = link_to edit_user_path(current_user), class:'icons' do
         <i class="fas fa-cog icon"></i>
 .side-bar__group--list
-  .side-bar__group--list--package
-    .side-bar__group--list--package--groupname
-      techcamp
-    .side-bar__group--list--package--new
-      まだメッセージがありません
+  - current_user.groups.each do |group|
+    .side-bar__group--list--package
+      .side-bar__group--list--package--groupname
+        = link_to '#' do
+          = group.name
+          -# techcamp
+      .side-bar__group--list--package--new
+        まだメッセージがありません
