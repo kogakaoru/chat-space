@@ -1,40 +1,33 @@
 .main-chat__group--info
   .main-chat__group--info--ingredients
     .main-chat__group--info--ingredients--leftbox 
-      test
+      -# test
+      = @group.name
       .main-chat__group--info--ingredients--leftbox--member
-        Member : maira
+        Member : 
+        - @group.users.each do |user|
+          =user.name
     .main-chat__group--info--ingredients--Edit
-      = link_to "#" ,class:'main-chat__group--info--ingredients--Edit--btn' do
+      = link_to edit_group_path(@group) ,class:'main-chat__group--info--ingredients--Edit--btn' do
         Edit
 .main-chat__message--list
-  .main-chat__message--list--article 
-    .main-chat__message--list--article--head 
-      .main-chat__message--list--article--head--name 
-        masa
-      .main-chat__message--list--article--head--date
-        2021/11/20(wed) 17:00:00
-    .main-chat__message--list--article--text
-      おはよう！
-  .main-chat__message--list--article 
-    .main-chat__message--list--article--head 
-      .main-chat__message--list--article--head--name 
-        maira
-      .main-chat__message--list--article--head--date
-        2021/11/20(wed) 17:00:00
-    .main-chat__message--list--article--text
-      おはよう！
+  = render @messages
+  -# .main-chat__message--list--article 
+  -#   .main-chat__message--list--article--head 
+  -#     .main-chat__message--list--article--head--name 
+  -#       masa
+  -#     .main-chat__message--list--article--head--date
+  -#       2021/11/20(wed) 17:00:00
+  -#   .main-chat__message--list--article--text
+  -#     おはよう！
 .main-chat__message--form
   .main-chat__message--form--input
-    .main-chat__message--form--input--text 
-    %form 
-      %input{type: "text", class: "main-chat__message--form--input--text",placeholder: "type a message"}
-    .main-chat__message--form--input--picture
-      %label{class: "input-picture"}
-        -# = link_to "#" ,class:'picture-icon' do
-        -#   <i class="far fa-image"></i>
-        = icon('fas', 'image')
-        %input{type: "file", class:"file", style: "display:none;"}
-  .main-chat__message--form--send
-    %form 
-      %input{type: "submit", value: "Send", class: "main-chat__message--form--send-btn"}
+    .main-chat__message--form--input--text
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'main-chat__message--form--input--text', placeholder: 'type a message'
+        .main-chat__message--form--input--picture
+          = f.label :image, class: 'input-picture' do
+            = icon('fas', 'image')
+            = f.file_field :image, style: "display:none;"
+    
+        = f.submit 'Send', class: 'main-chat__message--form--send-btn', style: "display:block;"

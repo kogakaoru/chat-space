@@ -1,0 +1,4 @@
+--require spec_helper
+
+# 下記の記述を追加
+--format documentation

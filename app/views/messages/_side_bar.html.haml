@@ -12,8 +12,9 @@
   - current_user.groups.each do |group|
     .side-bar__group--list--package
       .side-bar__group--list--package--groupname
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           = group.name
-          -# techcamp
+        -# techcamp
       .side-bar__group--list--package--new
-        まだメッセージがありません
+        -# まだメッセージがありません
+        = group.show_last_message

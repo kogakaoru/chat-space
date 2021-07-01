@@ -48,6 +48,7 @@
   &__group--list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    overflow: scroll;
 
     &--package {
       margin: 0px 20px;
@@ -128,6 +129,7 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding-top: 35px;
+    overflow: scroll;
 
     &--article {
       margin-left: 40px;
@@ -162,6 +164,7 @@
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     &--input {
       line-height: 50px;
@@ -176,6 +179,8 @@
         width: calc(100vw - 300px - 195px);
         height: 50px;
         border: none;
+        // display: inline-block;
+        // display: flex;
       }
       &--text::placeholder{
         padding-left: 10px;
@@ -184,6 +189,7 @@
       &--picture {
         position: absolute;
         right: 10px;
+        top: 0px;
         font-size: 1.3rem;
       }
     }
@@ -194,7 +200,15 @@
       height: 50px;
       color: #ffffff;
       margin-left: 15px;
+      // float: right;
+      // display: inline-block;
+      display: block;
+      position: absolute;
+      // right: -15px;
+      left: 945px;
+      top: 0px;
     }
+
   }
 }
 
