@@ -19,3 +19,7 @@
 
 # 末尾に次の記述を追加
 public/uploads/*
+
+# 下記を.gitignoreへ追記してください
+
+public/uploads/*

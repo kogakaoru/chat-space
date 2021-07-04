@@ -1,0 +1,13 @@
+.main-chat__message--form
+  .main-chat__message--form--input
+    .main-chat__message--form--input--text 
+    %form 
+      %input{type: "text", class: "main-chat__message--form--input--text",placeholder: "type a message"}
+    .main-chat__message--form--input--picture
+      %label{class: "input-picture"}
+        = icon('fas', 'image')
+        %input{type: "file", class:"file", style: "display:none;"}
+        
+  .main-chat__message--form--send
+    %form 
+      %input{type: "submit", value: "Send", class: "main-chat__message--form--send-btn"}
