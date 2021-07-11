@@ -13,9 +13,9 @@ $(function(){
         </div>
         <div class="main-chat__message--list--article--text">
           ${message.content}
+          <img src=${message.image} >
         </div>
-      </div>
-      <img src=${message.image} >`
+      </div>`
       
     return html;
     } else {
@@ -52,7 +52,6 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      // console.log(data)
       $('.main-chat__message--list').append(html);
       $('.main-chat__message--list').animate({ scrollTop: $('.main-chat__message--list')[0].scrollHeight});
       $('form')[0].reset();
