@@ -37,6 +37,20 @@ $(function(){
     return html;
     };
   }
+
+  // var reloadMessages = function( {
+  //   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+  //   var last_message_id = $('.main-chat__message--list--article').data("message-id");
+  //   $.ajax({
+  //     //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+  //     url: "api/messages",
+  //     //ルーティングで設定した通りhttpメソッドをgetに指定
+  //     type: 'get',
+  //     dataType: 'json',
+  //     //dataオプションでリクエストに値を含める
+  //     data: {id: last_message_id}
+  //   })
+  // })
   
   $('#new_message').on('submit', function(e){
     e.preventDefault()
@@ -63,4 +77,48 @@ $(function(){
       $('.main-chat__message--form--send-btn').prop('disabled', false);
     })
   })
+
+  // var last_message_id = $('.main-chat__message--list--article').data("message-id");
+  // console.log(last_message_id);
+
+  // そのまま書いていいんじゃない？
+  // $.ajax({
+
+  // })
+
+  // この書き方だと、last_message_idに変な文句がつく(模解通りなのに、なぜ)
+  // var reloadMessages = function( {
+  //   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+  //   var last_message_id = $('.main-chat__message--list--article').data("message-id");
+  //   $.ajax({
+  //     //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+  //     url: "api/messages",
+  //     //ルーティングで設定した通りhttpメソッドをgetに指定
+  //     type: 'get',
+  //     dataType: 'json',
+  //     //dataオプションでリクエストに値を含める
+  //     data: {id: last_message_id}
+  //   })
+  // })
+
+  function reloadMessages() {
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    var last_message_id = $('.main-chat__message--list--article').data("message-id");
+    $.ajax({
+      //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
+      url: "api/messages",
+      //ルーティングで設定した通りhttpメソッドをgetに指定
+      type: 'get',
+      dataType: 'json',
+      //dataオプションでリクエストに値を含める
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('success');
+    })
+    .fail(function() {
+      alert('error');
+    })
+  }
+  
 });
