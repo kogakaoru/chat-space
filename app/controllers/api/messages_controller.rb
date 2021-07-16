@@ -1,6 +1,7 @@
 class Api::MessagesController < ApplicationController
 
   def index
+    #学習経過として、下記残しています。(復習用)
     # binding.pry
     # ルーティングでの設定によりparamsの中にgroup_idというキーでグループのidが入るので、これを元にDBからグループを取得する
     group = Group.find(params[:group_id])
