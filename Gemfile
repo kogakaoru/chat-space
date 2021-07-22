@@ -44,6 +44,12 @@ group :development, :test do
   gem 'factory_bot_rails'
   # これ、pictweetではtestの方に入れたけど・・・？
   gem 'faker'
+  # これは、自動デプロイの設定時に入れた
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
