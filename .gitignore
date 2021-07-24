@@ -23,3 +23,6 @@ public/uploads/*
 # 下記を.gitignoreへ追記してください
 
 public/uploads/*
+
+# ファイルの最下部に下記を追記
+config/secrets.yml
